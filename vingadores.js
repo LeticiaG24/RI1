@@ -27,13 +27,18 @@ const listaHerois = [
     new Heroi('Thor Odinson', 'Thor', 'Mjolnir', '', 95, 100, 100),
     new Heroi('Bruce Banner', 'Hulk', 'Força', '', 70, 100, 100),
     new Heroi('Natasha Romanoff', 'Viúva Negra', 'Pistolas', 'Bastões de choque', 80, 55, 70),
-    new Heroi('Clint Barton', 'Gavião Arqueiro', 'Arco e flechas', '', 75, 60, 65) //vulgo michel teló
+    new Heroi('Clint Barton', 'Gavião Arqueiro', 'Arco e flechas', '', 75, 60, 65), //vulgo michel teló
+    new Heroi('Thanos', 'Thanos', 'Manopla do infinito', '', 100, 100, 100)
 ]
 
 let maisForte = listaHerois[0]
 for(i=1; i<listaHerois.length; i++){
     if(maisForte.forca<listaHerois[i].forca){
+        console.log(`${listaHerois[i].codinome} ganha de ${maisForte.codinome} na força`)
         maisForte = listaHerois[i]
+    }
+    else{
+        console.log(`${listaHerois[i].codinome} perde de ${maisForte.codinome} na força`)
     }
 }
 console.log(`O herói mais forte é ${maisForte.codinome} com ${maisForte.forca} de força`)
@@ -41,7 +46,11 @@ console.log(`O herói mais forte é ${maisForte.codinome} com ${maisForte.forca}
 let maisRapido = listaHerois[0]
 for(i=1; i<listaHerois.length; i++){
     if(maisRapido.velocidade<listaHerois[i].velocidade){
+        console.log(`${listaHerois[i].codinome} ganha de ${maisRapido.codinome} na velocidade`)
         maisRapido = listaHerois[i]
+    }
+    else{
+        console.log(`${listaHerois[i].codinome} perde de ${maisRapido.codinome} na velocidade`)
     }
 }
 console.log(`O herói mais rápido é ${maisForte.codinome} com ${maisForte.velocidade} de velocidade`)
@@ -49,7 +58,11 @@ console.log(`O herói mais rápido é ${maisForte.codinome} com ${maisForte.velo
 let maisResistente = listaHerois[0]
 for(i=1; i<listaHerois.length; i++){
     if(maisResistente.resistencia<listaHerois[i].resistencia){
+        console.log(`${listaHerois[i].codinome} ganha de ${maisResistente.codinome} na resistência`)
         maisResistente = listaHerois[i]
+    }
+    else{
+        console.log(`${listaHerois[i].codinome} perde de ${maisResistente.codinome} na resistência`)
     }
 }
 console.log(`O herói mais resistente é ${maisResistente.codinome} com ${maisResistente.velocidade} de resistência`)
