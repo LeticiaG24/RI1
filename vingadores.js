@@ -1,35 +1,80 @@
-class Heroi {
-    constructor(nome, codinome, armaPrincipal, armaSecundaria, velocidade, forca, resistencia){
-        this.nome=nome
-        this.codinome=codinome
-        this.armaPrincipal=armaPrincipal
-        this.armaSecundaria=armaSecundaria
-        this.velocidade=velocidade
-        this.forca=forca
-        this.resistencia=resistencia
-    }
-
-    descricao() {
-        console.log(`
-        Nome: ${this.nome}
-        Codinome: ${this.codinome}
-        Arma principal: ${this.armaPrincipal}
-        Arma secundária: ${this.armaSecundaria}
-        Velocidade: ${this.velocidade}
-        Força: ${this.forca}
-        Resistência: ${this.resistencia}`)
-    }
-}
-
 const listaHerois = [
-    new Heroi('Steve Rogers', 'Capitão América', 'Escudo americano', '', 85, 75, 80),
-    new Heroi('Tony Stark', 'Homem de Ferro', 'Armadura de ferro', '', 90, 70, 90),
-    new Heroi('Thor Odinson', 'Thor', 'Mjolnir', '', 95, 100, 100),
-    new Heroi('Bruce Banner', 'Hulk', 'Força', '', 70, 100, 100),
-    new Heroi('Natasha Romanoff', 'Viúva Negra', 'Pistolas', 'Bastões de choque', 80, 55, 70),
-    new Heroi('Clint Barton', 'Gavião Arqueiro', 'Arco e flechas', '', 75, 60, 65), //vulgo michel teló
-    new Heroi('Thanos', 'Thanos', 'Manopla do infinito', '', 100, 100, 100)
+    {
+        nome: 'Steve Rogers',
+        codinome: 'Capitão América',
+        armaPrincipal: 'Escudo americano',
+        armaSecundaria: '',
+        velocidade: 85,
+        forca: 75,
+        resistencia: 80
+    },
+    {
+        nome: 'Tony Stark',
+        codinome: 'Homem de Ferro',
+        armaPrincipal: 'Armadura de ferro',
+        armaSecundaria: '',
+        velocidade: 90,
+        forca: 70,
+        resistencia: 90
+    },
+    {
+        nome: 'Thor Odinson',
+        codinome: 'Thor',
+        armaPrincipal: 'Mjolnir',
+        armaSecundaria: '',
+        velocidade: 95,
+        forca: 99,
+        resistencia: 99
+    },
+    {
+        nome: 'Bruce Banner',
+        codinome: 'Hulk',
+        armaPrincipal: 'Força',
+        armaSecundaria: '',
+        velocidade: 70,
+        forca: 98,
+        resistencia: 98
+    },
+    {
+        nome: 'Natasha Romanoff',
+        codinome: 'Viúva Negra',
+        armaPrincipal: 'Pistolas',
+        armaSecundaria: 'Bastões de choque',
+        velocidade: 80,
+        forca: 55,
+        resistencia: 70
+    },
+    {
+        nome: 'Clint Barton',
+        codinome: 'Gavião Arqueiro',
+        armaPrincipal: 'Arco e flechas',
+        armaSecundaria: '',
+        velocidade: 75,
+        forca: 60,
+        resistencia: 65
+    },
+    {
+        nome: 'Thanos',
+        codinome: 'Thanos',
+        armaPrincipal: 'Manopla do infinito',
+        armaSecundaria: '',
+        velocidade: 100,
+        forca: 100,
+        resistencia: 100
+    }
 ]
+
+function descricao(heroi) {
+    console.log(`
+Nome: ${heroi.nome}
+Codinome: ${heroi.codinome}
+Arma principal: ${heroi.armaPrincipal}
+Arma secundária: ${heroi.armaSecundaria}
+Velocidade: ${heroi.velocidade}
+Força: ${heroi.forca}
+Resistência: ${heroi.resistencia}
+`)
+}
 
 let maisForte = listaHerois[0]
 for(i=1; i<listaHerois.length; i++){
@@ -41,7 +86,7 @@ for(i=1; i<listaHerois.length; i++){
         console.log(`${listaHerois[i].codinome} perde de ${maisForte.codinome} na força`)
     }
 }
-console.log(`O herói mais forte é ${maisForte.codinome} com ${maisForte.forca} de força`)
+console.log(`O personagem mais forte é ${maisForte.codinome} com ${maisForte.forca} de força`)
 
 let maisRapido = listaHerois[0]
 for(i=1; i<listaHerois.length; i++){
@@ -53,7 +98,7 @@ for(i=1; i<listaHerois.length; i++){
         console.log(`${listaHerois[i].codinome} perde de ${maisRapido.codinome} na velocidade`)
     }
 }
-console.log(`O herói mais rápido é ${maisForte.codinome} com ${maisForte.velocidade} de velocidade`)
+console.log(`O personagem mais rápido é ${maisRapido.codinome} com ${maisRapido.velocidade} de velocidade`)
 
 let maisResistente = listaHerois[0]
 for(i=1; i<listaHerois.length; i++){
@@ -65,8 +110,8 @@ for(i=1; i<listaHerois.length; i++){
         console.log(`${listaHerois[i].codinome} perde de ${maisResistente.codinome} na resistência`)
     }
 }
-console.log(`O herói mais resistente é ${maisResistente.codinome} com ${maisResistente.velocidade} de resistência`)
+console.log(`O personagem mais resistente é ${maisResistente.codinome} com ${maisResistente.velocidade} de resistência`)
 
 listaHerois.forEach(heroi => {
-    heroi.descricao()
+    descricao(heroi)
 })
